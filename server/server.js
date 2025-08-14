@@ -12,8 +12,13 @@ app.use(express.json());
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-app.post('/chatHC', async (req, res) => {
-	const { message } = req.body;
+app.post('/chat/hitesh', async (req, res) => {
+	let { messages } = req.body;
+
+	// Validate incoming messages array
+	if (!Array.isArray(messages)) {
+		return res.status(400).json({ error: 'messages must be an array' });
+	}
 
 	try {
 		const response = await client.chat.completions.create({
@@ -23,15 +28,17 @@ app.post('/chatHC', async (req, res) => {
 					role: 'system',
 					content: hiteshSirPersona,
 				},
-				{ role: 'user', content: message },
+				...messages, // Full conversation history
 			],
 		});
 
 		res.json({ reply: response.choices[0].message.content });
 	} catch (error) {
-		console.error(error);
+		console.error('Error in /chatHC:', error);
 		res.status(500).json({ error: 'Something went wrong' });
 	}
 });
 
-app.listen(5000, () => console.log('Server running on http://localhost:5000'));
+app.listen(5000, () =>
+	console.log('✅ Server running on http://localhost:5000'),
+);

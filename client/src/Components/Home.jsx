@@ -109,7 +109,7 @@ const Home = () => {
 							</div>
 
 							<button
-								onClick={() => handleNavigation('/chatHC')}
+								onClick={() => handleNavigation('/chat/hitesh')}
 								className="group/btn inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 cursor-pointer"
 							>
 								<MessageCircle className="w-5 h-5" />
@@ -150,7 +150,7 @@ const Home = () => {
 							</div>
 
 							<button
-								onClick={() => handleNavigation('/chatPiyush')}
+								onClick={() => handleNavigation('/chat/piyush')}
 								className="group/btn inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 cursor-pointer"
 							>
 								<MessageCircle className="w-5 h-5" />

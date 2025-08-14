@@ -15,7 +15,7 @@ function HiteshPersona() {
 		{
 			role: 'assistant',
 			content:
-				"Hello! I'm Hitesh, your tech mentor. I'm here to help you with programming, web development, career advice, and all things tech. What would you like to discuss today?",
+				'Hanjii kaise hai aap?mai aapki aaj kis tarike se madad kar skta hun',
 		},
 	]);
 	const [loading, setLoading] = useState(false);
@@ -33,15 +33,16 @@ function HiteshPersona() {
 		if (!input.trim()) return;
 
 		const userMessage = { role: 'user', content: input };
-		setMessages((prev) => [...prev, userMessage]);
+		const updatedMessages = [...messages, userMessage]; // Keep history
+		setMessages(updatedMessages);
 		setInput('');
 		setLoading(true);
 
 		try {
-			const res = await fetch('http://localhost:5000/chatHC', {
+			const res = await fetch('http://localhost:5000/chat/hitesh', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ message: input }),
+				body: JSON.stringify({ messages: updatedMessages }), // Send full history
 			});
 
 			const data = await res.json();
