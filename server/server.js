@@ -10,10 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 app.post('/chat/hitesh', async (req, res) => {
-	let { messages } = req.body;
+	let { messages, apiKey } = req.body;
+	const client = new OpenAI({ apiKey: apiKey });
 
 	// Validate incoming messages array
 	if (!Array.isArray(messages)) {

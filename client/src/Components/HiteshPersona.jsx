@@ -30,6 +30,8 @@ function HiteshPersona() {
 	}, [messages]);
 
 	const sendMessage = async () => {
+		const userApiKey = sessionStorage.getItem('openai_api_key');
+
 		if (!input.trim()) return;
 
 		const userMessage = { role: 'user', content: input };
@@ -42,7 +44,10 @@ function HiteshPersona() {
 			const res = await fetch('http://localhost:5000/chat/hitesh', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ messages: updatedMessages }), // Send full history
+				body: JSON.stringify({
+					messages: updatedMessages, // Send full history
+					apiKey: userApiKey, // Send user's API key
+				}),
 			});
 
 			const data = await res.json();
