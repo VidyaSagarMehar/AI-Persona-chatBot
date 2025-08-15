@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-	MessageCircle,
-	Sparkles,
-	Users,
-	ArrowRight,
-	Brain,
-	Heart,
-} from 'lucide-react';
+import { MessageCircle, Sparkles, Users, ArrowRight } from 'lucide-react';
 
 const Home = () => {
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -84,7 +77,11 @@ const Home = () => {
 						<div className="relative bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 h-full">
 							<div className="flex items-center gap-4 mb-6">
 								<div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center">
-									<Brain className="w-8 h-8 text-white" />
+									<img
+										className="w-full h-full"
+										src="https://avatars.githubusercontent.com/u/11613311?v=4"
+										alt=""
+									/>
 								</div>
 								<div>
 									<h3 className="text-2xl font-bold text-white">Hitesh Sir</h3>
@@ -125,11 +122,15 @@ const Home = () => {
 						<div className="relative bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 h-full">
 							<div className="flex items-center gap-4 mb-6">
 								<div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center">
-									<Heart className="w-8 h-8 text-white" />
+									<img
+										className="w-full h-full"
+										src="https://www.piyushgarg.dev/_next/image?url=%2Fimages%2Favatar.png&w=1080&q=75"
+										alt="profile"
+									/>
 								</div>
 								<div>
 									<h3 className="text-2xl font-bold text-white">Piyush Sir</h3>
-									<p className="text-cyan-400">Wisdom & Life Coach</p>
+									<p className="text-cyan-400">Tech Mentor & Life Coach</p>
 								</div>
 							</div>
 
@@ -139,14 +140,16 @@ const Home = () => {
 							</p>
 
 							<div className="flex flex-wrap gap-2 mb-6">
-								{['Life Advice', 'Growth', 'Success', 'Wisdom'].map((tag) => (
-									<span
-										key={tag}
-										className="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm"
-									>
-										{tag}
-									</span>
-								))}
+								{['Programming', 'Life Advice', 'Growth', 'Success'].map(
+									(tag) => (
+										<span
+											key={tag}
+											className="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm"
+										>
+											{tag}
+										</span>
+									),
+								)}
 							</div>
 
 							<button

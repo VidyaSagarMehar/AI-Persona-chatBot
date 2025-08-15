@@ -1,10 +1,8 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import cors from 'cors';
 import { OpenAI } from 'openai';
 import { hiteshSirPersona } from './persona/hiteshSirPersona.js';
-
-dotenv.config();
+import { piyushSirPersona } from './persona/piyushSirPersona.js';
 
 const app = express();
 app.use(cors());
@@ -33,7 +31,34 @@ app.post('/chat/hitesh', async (req, res) => {
 
 		res.json({ reply: response.choices[0].message.content });
 	} catch (error) {
-		console.error('Error in /chatHC:', error);
+		console.error('Error in /chat/hitesh:', error);
+		res.status(500).json({ error: 'Something went wrong' });
+	}
+});
+app.post('/chat/piyush', async (req, res) => {
+	let { messages, apiKey } = req.body;
+	const client = new OpenAI({ apiKey: apiKey });
+
+	// Validate incoming messages array
+	if (!Array.isArray(messages)) {
+		return res.status(400).json({ error: 'messages must be an array' });
+	}
+
+	try {
+		const response = await client.chat.completions.create({
+			model: 'gpt-4.1-mini',
+			messages: [
+				{
+					role: 'system',
+					content: piyushSirPersona,
+				},
+				...messages, // Full conversation history
+			],
+		});
+
+		res.json({ reply: response.choices[0].message.content });
+	} catch (error) {
+		console.error('Error in /chat/piyush:', error);
 		res.status(500).json({ error: 'Something went wrong' });
 	}
 });
