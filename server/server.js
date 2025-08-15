@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import 'dotenv/config';
 import { OpenAI } from 'openai';
 import { hiteshSirPersona } from './persona/hiteshSirPersona.js';
 import { piyushSirPersona } from './persona/piyushSirPersona.js';
@@ -7,6 +8,7 @@ import { piyushSirPersona } from './persona/piyushSirPersona.js';
 const app = express();
 app.use(cors());
 app.use(express.json());
+const PORT = process.env.PORT || 5000;
 
 app.post('/chat/hitesh', async (req, res) => {
 	let { messages, apiKey } = req.body;
@@ -63,6 +65,6 @@ app.post('/chat/piyush', async (req, res) => {
 	}
 });
 
-app.listen(5000, () =>
-	console.log('✅ Server running on http://localhost:5000'),
-);
+app.listen(PORT, () => {
+	console.log(`✅ Server running on http://localhost:${PORT}`);
+});
