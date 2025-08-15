@@ -18,7 +18,7 @@ function App() {
 							name="Hitesh"
 							title="Tech Mentor & Guide"
 							initialMessage="Hanjii kaise hai aap? mai aapki aaj kis tarike se madad kar skta hun"
-							endpoint="http://localhost:5000/chat/hitesh"
+							endpoint="https://ai-persona-chatbot.onrender.com/chat/hitesh"
 							src="https://avatars.githubusercontent.com/u/11613311?v=4"
 						/>
 					}
@@ -30,7 +30,7 @@ function App() {
 							name="Piyush"
 							title="Tech Mentor & Guide"
 							initialMessage="Hello, to aaj hmlog kis topic par bat karne wale hai?"
-							endpoint="http://localhost:5000/chat/piyush"
+							endpoint="https://ai-persona-chatbot.onrender.com/chat/piyush"
 							src="https://www.piyushgarg.dev/_next/image?url=%2Fimages%2Favatar.png&w=1080&q=75"
 						/>
 					}
