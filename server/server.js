@@ -6,7 +6,13 @@ import { hiteshSirPersona } from './persona/hiteshSirPersona.js';
 import { piyushSirPersona } from './persona/piyushSirPersona.js';
 
 const app = express();
-app.use(cors());
+app.use(
+	cors({
+		origin: 'https://ai-persona-chat-bot.vercel.app',
+		methods: ['GET', 'POST'],
+		allowedHeaders: ['Content-Type'],
+	}),
+);
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
