@@ -53,7 +53,6 @@ npm run dev
 - Creating glassmorphism UI effects with backdrop blur and transparency layers.
 - Designing persona-specific themes with unique color gradients and branding.
 - Building responsive chat interfaces with auto-scroll and message threading.
-- Managing session storage for secure API key handling without persistence.
 - Implementing real-time typing indicators and smooth message animations.
 
 ## 🛠️ Tech Stack
@@ -106,23 +105,17 @@ Technical mentorship with code review suggestions and career guidance
 Secure user authentication with session-based storage
 
 ## 💡 How It Works
-
-### 1. API Key Setup
-- Users enter their OpenAI API key on first visit
-- Keys are stored in session storage (cleared on browser close)
-- No backend API costs – users pay for their own usage
-
-### 2. Persona Selection
+### 1. Persona Selection
 - Choose between Hitesh Sir (Tech Mentor) or Piyush Sir (Life Coach)
 - Each persona has unique personality, expertise area, and visual theme
 
-### 3. AI Conversations
+### 2. AI Conversations
 - Context-aware chat with full conversation history
 - Real-time responses with typing indicators
 - Quick action buttons for common questions
 - Auto-expanding text input for longer messages
 
-### 4. Smart Features
+### 3. Smart Features
 - Auto-scroll to latest messages
 - Keyboard shortcuts (Enter to send, Shift+Enter for new line)
 - Error handling with user-friendly messages
@@ -151,14 +144,6 @@ Secure user authentication with session-based storage
 - Optimized animations with CSS transforms
 - Efficient state management with React hooks
 - Minimal bundle size with modern build tools
-
-## 🛡️ Privacy & Security
-
-- API keys stored in session storage only
-- Automatic key deletion when browser closes
-- No server-side key storage or logging
-- Direct OpenAI communication from user's browser
-- Full transparency about data handling
 
 ## 📬 Feedback
 If you have any feedback, suggestions, or ideas to improve AI Persona Chat, please reach out to me at **your-email@domain.com**.
