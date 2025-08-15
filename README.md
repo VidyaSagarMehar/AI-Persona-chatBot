@@ -82,7 +82,7 @@ npm run dev
 - **Interactive Animations** – Hover effects, scale transforms, and glow states
 
 ## 🚀 Live Demo
-🔗 Will be added soon...
+🔗 [Live Demo Here](https://ai-persona-chat-bot.vercel.app/)
 
 ## 📸 Screenshots
 
