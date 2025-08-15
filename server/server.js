@@ -39,7 +39,7 @@ app.post('/chat/hitesh', async (req, res) => {
 });
 app.post('/chat/piyush', async (req, res) => {
 	let { messages, apiKey } = req.body;
-	const client = new OpenAI({ apiKey: apiKey });
+	const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 	// Validate incoming messages array
 	if (!Array.isArray(messages)) {
