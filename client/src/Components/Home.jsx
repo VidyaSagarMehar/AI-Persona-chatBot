@@ -80,7 +80,7 @@ const Home = () => {
 									<img
 										className="w-full h-full"
 										src="https://avatars.githubusercontent.com/u/11613311?v=4"
-										alt=""
+										alt="profile pic"
 									/>
 								</div>
 								<div>

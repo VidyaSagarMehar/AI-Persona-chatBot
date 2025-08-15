@@ -9,7 +9,7 @@ import {
 	User,
 } from 'lucide-react';
 
-function MentorPersona({ name, title, initialMessage, endpoint }) {
+function MentorPersona({ name, title, initialMessage, endpoint, src }) {
 	const [input, setInput] = useState('');
 	const [messages, setMessages] = useState([
 		{ role: 'assistant', content: initialMessage },
@@ -102,7 +102,7 @@ function MentorPersona({ name, title, initialMessage, endpoint }) {
 
 					<div className="flex items-center gap-3">
 						<div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl flex items-center justify-center">
-							<Brain className="w-6 h-6 text-white" />
+							<img className="w-full h-full" src={src} alt="profile pic" />
 						</div>
 						<div>
 							<h1 className="text-xl font-bold text-white">{name} Sir</h1>
@@ -129,8 +129,12 @@ function MentorPersona({ name, title, initialMessage, endpoint }) {
 							}`}
 						>
 							{msg.role === 'assistant' && (
-								<div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-									<Brain className="w-5 h-5 text-white" />
+								<div className="w-10 h-10 bg-gradient-to-r rounded-full from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+									<img
+										className="w-full h-full rounded-full"
+										src={src}
+										alt="profile pic"
+									/>
 								</div>
 							)}
 
@@ -147,8 +151,8 @@ function MentorPersona({ name, title, initialMessage, endpoint }) {
 							</div>
 
 							{msg.role === 'user' && (
-								<div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
-									<User className="w-5 h-5 text-white" />
+								<div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0">
+									<User className="w-5 h-5 text-white rounded-full" />
 								</div>
 							)}
 						</div>
