@@ -7,8 +7,7 @@ import MentorPersona from './Components/MentorPersona';
 
 function App() {
 	return (
-		<AppWithApiKey>
-			{/* <Navigation /> */}
+		<>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route
@@ -37,7 +36,7 @@ function App() {
 				/>
 				<Route path="*" element={<Error />} />
 			</Routes>
-		</AppWithApiKey>
+		</>
 	);
 }
 

@@ -11,8 +11,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 app.post('/chat/hitesh', async (req, res) => {
-	let { messages, apiKey } = req.body;
-	const client = new OpenAI({ apiKey: apiKey });
+	let { messages } = req.body;
+	const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 	// Validate incoming messages array
 	if (!Array.isArray(messages)) {
